@@ -1,0 +1,44 @@
+//this file contains short notes of java programming
+
+
+//OOP CONCEPTS
+
+//Object-Oriented Programming (OOP) is a programming paradigm that revolves around the concept of objects and classes which have properties and methods.
+
+//Object: An object is an instance of a class And real world entity which is represented by using class and object with the help of data members and member functions.
+
+//Properties of object:
+//1. It has state Which holds current value of Attributes of an object.
+//2. it has behaviour which defines how object act and react based on changing state or message passed to it.
+//3. It has identity which is unique to each object.To identify object uniquely we select a single or group of attributes.
+//4. It has responsibility which defines role of the object in the system in which it is present.
+
+
+//There are four main Pillars of OOP: Abstraction, encapsulation, inheritance and polymorphism.
+
+//1. Abstraction: It is process of selecting key aspects or attributes of an object according to current problems Scenario And hiding other details from user.
+//Abstraction is achieved through abstract classes and interfaces, allowing for the exposure of only necessary information to the outside world while hiding internal implementation details.
+
+//2. Encapsulation: It is a mechanism used to hide data, internal structure and implementation of object.Interaction with the object is provided through its public interface of operations.
+//Encapsulation is achieved through classes, which wrap data and methods into a single unit, hiding internal implementation details from the outside world.
+
+//3. Inheritance: It is a mechanism in which One object can acquire properties of another object.It helps to handle complexity through classification.User knows only about the interface. Any changes to the implementation will not affect the user.
+//Inheritance is achieved through classes and interfaces, allowing one class to inherit the properties and behavior of another class.
+
+//4. Polymorphism: The ability of different types of related objects to respond to the same message in their own way It's called as polymerism.A single command or method call can trigger different implementation and behaviour for the object upon which it is invoked.
+//Polymorphism can be achieved through method overloading and method overriding, allowing objects of different classes to be treated as objects of a common superclass, and enabling more flexibility in programming.
+
+
+//Types of relationships:
+
+//1. Is a : It is relationship between two objects or classes where one object is a subtype of another object. It is achieved by inheritance which have two perspectives generalisation and specialisation.
+
+// generalisation :  It is a process of identifying common characteristics of a group of objects and representing them in a class.
+// specialisation : It is a process of identifying a specific characteristic of a class and representing it in a subclass.
+
+
+//2. Has a : It is relationship between two objects or classes where one Object is a part of another object.It is achieved by containment which have two perspectives composition and aggregation.
+
+// Composition : Physical presence is necessary for the working of object.Because object is composed of these elements or attributes. 
+// Aggregation : Physical presence is not necessary for the working of object.Object can still be working without these elements or attributes.
+
