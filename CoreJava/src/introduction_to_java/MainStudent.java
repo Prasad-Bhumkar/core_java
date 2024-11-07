@@ -16,8 +16,7 @@ public class MainStudent {
 		double marks = s1.getStudMarks();
 		
 		
-		
-		
+		System.out.println("Account Details:");
 		System.out.println("Student Id :"+id+"\nStudent Name :"+name+"\nStudent Marks :"+marks);
 	}
 }
