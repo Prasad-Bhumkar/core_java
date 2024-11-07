@@ -1,20 +1,23 @@
 //this file contains short notes of java programming
 
+//====================================================================================================================================================================================================================================================================================
 
-//OOP CONCEPTS
+
+//***OOP CONCEPTS***
 
 //Object-Oriented Programming (OOP) is a programming paradigm that revolves around the concept of objects and classes which have properties and methods.
 
 //Object: An object is an instance of a class And real world entity which is represented by using class and object with the help of data members and member functions.
 
-//Properties of object:
+//*** Properties of object ***
 //1. It has state Which holds current value of Attributes of an object.
 //2. it has behaviour which defines how object act and react based on changing state or message passed to it.
 //3. It has identity which is unique to each object.To identify object uniquely we select a single or group of attributes.
 //4. It has responsibility which defines role of the object in the system in which it is present.
 
 
-//There are four main Pillars of OOP: Abstraction, encapsulation, inheritance and polymorphism.
+//*** There are four main Pillars of OOP *** 
+//Abstraction, encapsulation, inheritance and polymorphism.
 
 //1. Abstraction: It is process of selecting key aspects or attributes of an object according to current problems Scenario And hiding other details from user.
 //Abstraction is achieved through abstract classes and interfaces, allowing for the exposure of only necessary information to the outside world while hiding internal implementation details.
@@ -29,7 +32,7 @@
 //Polymorphism can be achieved through method overloading and method overriding, allowing objects of different classes to be treated as objects of a common superclass, and enabling more flexibility in programming.
 
 
-//Types of relationships:
+//*** Types of relationships ***
 
 //1. Is a : It is relationship between two objects or classes where one object is a subtype of another object. It is achieved by inheritance which have two perspectives generalisation and specialisation.
 
@@ -42,3 +45,233 @@
 // Composition : Physical presence is necessary for the working of object.Because object is composed of these elements or attributes. 
 // Aggregation : Physical presence is not necessary for the working of object.Object can still be working without these elements or attributes.
 
+
+//==================================================================================================================================================================================================================================================================================
+
+
+//***Features of Java***
+
+//1.Platform independence: Java code can be compiled once and run anywhere.Bytecode can be transported on any operating system and hardware. Java is platform independent but strictly dependent upon jvm.
+
+//2. Portable:  Java code can be easily moved from one environment to another without any changes.
+
+//3. Simple: Java is a simple language to learn and use.
+
+//4. Robust: Java is a robust language because it is designed to prevent errors and exceptions.
+
+//5. Object-oriented: Java is an object-oriented language that supports the principles of encapsulation, inheritance, and polymorphism.
+
+//6. Multithreaded: Java supports multithreading, which allows for concurrent execution of  multiple threads of execution.
+
+
+//***Data types in Java***
+
+//1. Primitive data types: These are the basic data types in Java, such as int, float, char, boolean, etc.
+//   a. Byte: 8-bit signed integer, size: 1 byte
+//   b. Short: 16-bit signed integer, size: 2 bytes
+//   c. Int: 32-bit signed integer, size: 4 bytes
+//   d. Long: 64-bit signed integer, size: 8 bytes
+//   e. Float: 32-bit floating point number, size: 4 bytes
+//   f. Double: 64-bit floating point number, size: 8 bytes
+//   g. Char: 16-bit unsigned character, size: 2 bytes
+//   h. Boolean: true or false value, size: 1 byte
+
+//2. Non-Primitive data types: These are the data types that are used to store the memory address of an object, such as String, Array, etc.
+//   a. Reference data types: These are the data types that are used to store the memory address of an object, such as String, Array, etc.
+//   b. Wrapper classes: These are the classes that are used to convert primitive data types to objects, such as Integer, Float, etc.
+//   c. Enumerations: These are the data types that are used to represent a fixed set of constants, such as Days, Colors, etc.
+//   d. Arrays: These are the data types that are used to store a collection of values of the same data type, such as int[], String[], etc.
+//   e. Collections: These are the data types that are used to store a collection of objects, such as ArrayList, LinkedList, etc.
+//   f. Maps: These are the data types that are used to store a collection of key-value pairs, such as HashMap, TreeMap, etc.
+//   g. Sets: These are the data types that are used to store a collection of unique values, such as HashSet, TreeSet, etc.
+//   h. Generics: These are the data types that are used to store a collection of objects of a specific type, such as List<String>, Set<Integer>, etc.
+//   i. Autoboxing and Unboxing: These are the features that are used to convert primitive data types to objects and vice versa, such as int to Integer, etc.
+
+
+
+//***Execution of Java application in JVM***
+
+//1. Compilation: The Java compiler (javac) compiles the Java source code into bytecode (.class file).
+//   Source Code (.java) -> Compiler (javac) -> Bytecode (.class)
+
+//2. Loading: The Class Loader loads the bytecode into memory.  
+//   The Class Loader is responsible for loading the classes (Built in and user defined) and their dependencies into memory.
+//   Bytecode (.class) -> Class Loader -> Runtime Data Areas
+
+//3. Verification: The Bytecode Verifier checks the loaded bytecode for any errors and resolves any references to other classes or libraries.
+//   Bytecode (.class) -> Bytecode Verifier -> Verified Bytecode
+
+//4. Initialization: The JVM initializes the loaded classes by executing their static initializers.
+//   Verified Bytecode -> JVM -> Initialized Classes
+
+//5. Execution: The JVM executes the main method of the main class using the Interpreter.
+//   Initialized Classes -> Interpreter -> Execution of main method
+
+//6. Just-In-Time (JIT) Compilation: The JIT compiler compiles the frequently executed bytecode into native machine code.
+//   Interpreter -> JIT Compiler -> Native Machine Code
+
+//7. Execution of Native Machine Code: The JVM executes the native machine code.
+//   Native Machine Code -> JVM -> Execution of Native Machine Code
+
+//8. Runtime Data Areas: The JVM uses several runtime data areas to store data during execution, including:
+//   a. Method Area: stores the class metadata, such as the class hierarchy and method tables.
+//   b. Heap: stores the objects created by the application.
+//   c. Stack: stores the thread's execution stack, including the method call stack and local variables.
+//   d. Native Method Stack: stores the native method call stack.
+//   e. PC Register: stores the current instruction pointer.
+//   f. Native Method Interface: provides a way for Java code to call native methods.
+
+//9. Garbage Collection: The JVM periodically runs the garbage collector to free up memory occupied by objects that are no longer referenced.
+
+//10. Shutdown: The JVM shuts down when the application exits or when the JVM is explicitly shut down.
+
+
+
+//*** JDK,JVM,JRE ***
+
+
+//   JDK (Java Development Kit): a bundle of tools and libraries that are used to develop, compile, and run Java applications.
+//   JVM (Java Virtual Machine): a runtime environment that executes Java bytecode.
+//   JRE (Java Runtime Environment): a bundle of libraries and tools that are required to run Java applications, but not to develop them.
+
+
+//   JRE = JVM + Libraries + Tools
+//   JDK = JRE + Development Tools
+//   JVM = JRE + Runtime Environment
+//   JVM = JRE + Runtime Environment
+
+
+
+//*** Access Specifiers in Java ***
+
+// Access specifiers are used to define the scope of a class, method, or variable. They determine who can access the class, method, or variable.
+
+// There are four types of access specifiers in Java:
+
+// 1. Public: 
+//   - Can be accessed from anywhere, both within and outside the class, and within and outside the package.
+//   - Can be used with classes, methods, and variables.
+
+// 2. Private: 
+//   - Can only be accessed within the same class.
+//   - Cannot be accessed from outside the class, not even from subclasses.
+//   - Can be used with methods and variables.
+
+// 3. Protected: 
+//   - Can be accessed within the same class and from subclasses.
+//   - Can also be accessed from classes within the same package.
+//   - Can be used with methods and variables.
+
+// 4. Default (no access specifier): 
+//   - Can be accessed within the same class and from classes within the same package.
+//   - Cannot be accessed from outside the package.
+//   - Can be used with classes, methods, and variables.
+
+// Example:
+
+public class MyClass {
+    public int publicVar;
+    private int privateVar;
+    protected int protectedVar;
+    int defaultVar;
+
+    public void myPublicMethod() {}
+    private void myPrivateMethod() {}
+    protected void myProtectedMethod() {}
+    void myDefaultMethod() {}
+}
+
+// Accessing the variables and methods from within the same class:
+
+public class MyClass {
+    public void myMethod() {
+        publicVar = 10; // accessible
+        privateVar = 20; // accessible
+        protectedVar = 30; // accessible
+        defaultVar = 40; // accessible
+
+        myPublicMethod(); // accessible
+        myPrivateMethod(); // accessible
+        myProtectedMethod(); // accessible
+        myDefaultMethod(); // accessible
+    }
+}
+
+// Accessing the variables and methods from a subclass:
+
+public class MySubClass extends MyClass {
+    public void myMethod() {
+        publicVar = 10; // accessible
+        // privateVar = 20; // not accessible
+        protectedVar = 30; // accessible
+        defaultVar = 40; // accessible
+
+        myPublicMethod(); // accessible
+        // myPrivateMethod(); // not accessible
+        myProtectedMethod(); // accessible
+        myDefaultMethod(); // accessible
+    }
+}
+
+// Accessing the variables and methods from a class within the same package:
+
+public class MyOtherClass {
+    public void myMethod() {
+        MyClass obj = new MyClass();
+        obj.publicVar = 10; // accessible
+        // obj.privateVar = 20; // not accessible
+        // obj.protectedVar = 30; // not accessible
+        obj.defaultVar = 40; // accessible
+
+        obj.myPublicMethod(); // accessible
+        // obj.myPrivateMethod(); // not accessible
+        // obj.myProtectedMethod(); // not accessible
+        obj.myDefaultMethod(); // accessible
+    }
+}
+
+// Accessing the variables and methods from a class outside the package:
+
+public class MyOtherClass {
+    public void myMethod() {
+        MyClass obj = new MyClass();
+        obj.publicVar = 10; // accessible
+        // obj.privateVar = 20; // not accessible
+        // obj.protectedVar = 30; // not accessible
+        // obj.defaultVar = 40; // not accessible
+
+        obj.myPublicMethod(); // accessible
+        // obj.myPrivateMethod(); // not accessible
+        // obj.myProtectedMethod(); // not accessible
+        // obj.myDefaultMethod(); // not accessible
+    }
+}
+
+//  Accessing the variables and methods from a class In another package with inheritance
+
+public class MyOtherClass extends MyClass {
+    public void myMethod() {
+        publicVar = 10; // accessible
+        // privateVar = 20; // not accessible
+        protectedVar = 30; // accessible
+        defaultVar = 40; // accessible
+
+        myPublicMethod(); // accessible
+        // myPrivateMethod(); // not accessible
+        myProtectedMethod(); // accessible
+        myDefaultMethod(); // accessible
+    }
+}
+
+
+
+//
+
+
+//====================================================================================================================================================================================================================================================================================
+
+//====================================================================================================================================================================================================================================================================================
+
+//====================================================================================================================================================================================================================================================================================
+
+//====================================================================================================================================================================================================================================================================================
