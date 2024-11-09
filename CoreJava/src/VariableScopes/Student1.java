@@ -6,6 +6,7 @@ public class Student1 {
 	private double studMarks ;
 	private static int autoID;
 	
+//static block :
 	static{
 		autoID = 100;
 	}
