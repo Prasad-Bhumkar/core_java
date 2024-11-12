@@ -1,12 +1,5 @@
 /module-info.class
-/.classpath
-/.gitignore
-/.project
-/ConstructorHomework/
-/Constructor_and_This/
-/GetterSetterHomework/
-/MethodOverloading/
-/basicJava/
-/introduction_to_java/
-/VariableScopes/
-/AutoIdGenerator/
+/ToString/
+/SwapFunction/
+/ArraysInJava/
+/PassingArrayTofunction/
