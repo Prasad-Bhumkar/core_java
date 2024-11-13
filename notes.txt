@@ -15,6 +15,8 @@
 //3. It has identity which is unique to each object.To identify object uniquely we select a single or group of attributes.
 //4. It has responsibility which defines role of the object in the system in which it is present.
 
+//====================================================================================================================================================================================================================================================================================
+
 
 //*** There are four main Pillars of OOP *** 
 //Abstraction, encapsulation, inheritance and polymorphism.
@@ -30,6 +32,8 @@
 
 //4. Polymorphism: The ability of different types of related objects to respond to the same message in their own way It's called as polymerism.A single command or method call can trigger different implementation and behaviour for the object upon which it is invoked.
 //Polymorphism can be achieved through method overloading and method overriding, allowing objects of different classes to be treated as objects of a common superclass, and enabling more flexibility in programming.
+
+//====================================================================================================================================================================================================================================================================================
 
 
 //*** Types of relationships ***
@@ -63,6 +67,9 @@
 
 //6. Multithreaded: Java supports multithreading, which allows for concurrent execution of  multiple threads of execution.
 
+//====================================================================================================================================================================================================================================================================================
+
+
 
 //***Data types in Java***
 
@@ -87,6 +94,8 @@
 //   h. Generics: These are the data types that are used to store a collection of objects of a specific type, such as List<String>, Set<Integer>, etc.
 //   i. Autoboxing and Unboxing: These are the features that are used to convert primitive data types to objects and vice versa, such as int to Integer, etc.
 
+
+//====================================================================================================================================================================================================================================================================================
 
 
 //***Execution of Java application in JVM***
@@ -126,6 +135,8 @@
 //10. Shutdown: The JVM shuts down when the application exits or when the JVM is explicitly shut down.
 
 
+//====================================================================================================================================================================================================================================================================================
+
 
 //*** JDK,JVM,JRE ***
 
@@ -140,6 +151,8 @@
 //   JVM = JRE + Runtime Environment
 //   JVM = JRE + Runtime Environment
 
+
+//====================================================================================================================================================================================================================================================================================
 
 
 //*** Access Specifiers in Java ***
@@ -264,14 +277,737 @@ public class MyOtherClass extends MyClass {
 }
 
 
+//====================================================================================================================================================================================================================================================================================
 
-//
+//** this. keyword vs this() **
+// this : keyword is used to refer to the current object of the class. It is used to access the members of the class and to call other methods of the class.
+
+// this() : is a special method in Java that is used to call another constructor of the same class. It is used to initialize the objects of the class.
+
+class MyClass {
+    private int myVar;
+
+    // No-arg Constructor
+    public MyClass() {
+        myVar = 0;
+    }
+
+    // Parameterized Constructor
+    public MyClass(int myVar) {
+        this.myVar = myVar;
+    }
+
+    // Constructor that calls another constructor using this()
+    public MyClass(int myVar, int anotherVar) {
+        this(myVar);
+        System.out.println("Another variable: " + anotherVar);
+    }
+
+    // Method that uses this to refer to the current object
+    public void myMethod() {
+        System.out.println("Value of myVar: " + this.myVar);
+    }
+
+    public static void main(String[] args) {
+        MyClass obj = new MyClass(10, 20);
+        obj.myMethod();
+    }
+}
+
+//====================================================================================================================================================================================================================================================================================
+
+
+//** Constructor Chaining **
+// Constructor chaining is a technique in which a constructor calls another constructor of the same class. 
+// This is useful when we have multiple constructors in a class and we want to avoid code duplication.
+
+class MyClass {
+    private int myVar;
+
+    // No-arg Constructor
+    public MyClass() {
+        this(0); // Calls the parameterized constructor with default value
+    }
+
+    // Parameterized Constructor
+    public MyClass(int myVar) {
+        this.myVar = myVar;
+    }
+
+    // Another Parameterized Constructor
+    public MyClass(int myVar, int anotherVar) {
+        this(myVar); // Calls the parameterized constructor with one parameter
+        System.out.println("Another variable: " + anotherVar);
+    }
+}
 
 
 //====================================================================================================================================================================================================================================================================================
 
-//====================================================================================================================================================================================================================================================================================
+
+//** static keyword **
+// static keyword is used to create a class variable or a class method. Class variables are shared by
+// all the objects of the class and class methods can be called without creating an object of the class.
+// Static variables are initialized only once, at the start of the program, and they are stored in a
+// single location in memory. Static methods can be used to perform operations that do not depend on
+// the state of an object, such as mathematical calculations or data validation.
+
+// Example:
+class MyClass {
+    private static int myStaticVar; // static variable
+
+    public static void myStaticMethod() { // static method
+        System.out.println("This is a static method");
+    }
+
+    public static void main(String[] args) {
+        myStaticMethod(); // calling static method without creating an object
+        System.out.println(myStaticVar); // accessing static variable without creating an object
+    }
+}
+
 
 //====================================================================================================================================================================================================================================================================================
 
+
+//**Accessor and Mutator Methods**
+
+// Accessor Methods : These methods are used to get the value of a variable. They are also known as getter methods. They are used to return the value of a variable.
+// Mutator Methods : These methods are used to set the value of a variable. They are also known as setter methods.
+
+//Example : 
+class MyClass {
+    private int myVar;
+
+    /**
+     * Returns the value of myVar.
+     * 
+     * @return the value of myVar
+     */
+    public int getMyVar() {
+        return myVar;
+    }
+
+    /**
+     * Sets the value of myVar.
+     * 
+     * @param myVar the new value of myVar
+     */
+    public void setMyVar(int myVar) {
+        this.myVar = myVar;
+    }
+}
+
+
+//====================================================================================================================================================================================================================================================================================
+
+
+//**Constructor And Destructor**
+
+
+// Constructor : A constructor is a special method that is used to initialize the objects of a class when
+// they are created. It has the same name as the class and does not have a return type.
+// Destructor : Java does not have a destructor like some other languages. Instead, it has a finalize() method
+// that is called by the garbage collector when it determines that an object is no longer reachable.
+
+// Types of Constructors:
+// 1. No-arg Constructor: A constructor with no parameters.
+// 2. Parameterized Constructor: A constructor with parameters.
+// 3. Copy Constructor: A constructor that creates a copy of an existing object.
+
+// Constructor Overloading:
+// Constructor overloading is a technique in which multiple constructors are defined with different parameters.
+
+// Example:
+class MyClass {
+    private int myVar;
+
+    // No-arg Constructor
+    public MyClass() {
+        myVar = 0;
+    }
+
+    // Parameterized Constructor
+    public MyClass(int myVar) {
+        this.myVar = myVar;
+    }
+
+    // Copy Constructor
+    public MyClass(MyClass obj) {
+        this.myVar = obj.myVar;
+    }
+
+    // finalize() method
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+        System.out.println("finalize() method called");
+    }
+}
+
+
+//====================================================================================================================================================================================================================================================================================
+
+//** Types of variables **
+
+
+// 1. Instance Variables : These are the variables that are defined inside a class but outside any method. 
+//They are also known as data members or Non-static . They are used to store the stateof an object.
+// 2. Local Variables : These are the variables that are defined inside a method. 
+// They are used to store temporary values that are used within the method. They are also known as method variables or formal parameters.
+// 3. Static Variables : These are the variables that are shared by all objects of a class.
+//They are used to store values that are common to all objects of a class. They are also called as class variables.
+
+
+// 4. Final Variables : These are the variables that cannot be changed once they are
+// initialized. They are used to store values that should not be changed once they are
+// initialized.
+// 5. Final Static Variables : These are the variables that are shared by all objects of a
+// class and cannot be changed once they are initialized.
+// 6. Class Variables : These are the variables that are shared by all objects of a class
+// and are used to store values that are common to all objects of a class.
+// 7. Instance Static Variables : These are the variables that are shared by all objects of a
+// class and are used to store values that are common to all objects of a class.
+// 8. Static Block Variables : These are the variables that are defined inside a static block
+// and are used to store values that are common to all objects of a class.
+
+// Example of Instance Variables
+class MyClass {
+    private int myVar; // instance variable
+
+    public MyClass() {
+        myVar = 0; // initializing instance variable
+    }
+
+    public void myMethod() {
+        System.out.println("Value of myVar: " + myVar); // accessing instance variable
+    }
+}
+
+// Example of Local Variables
+class MyClass {
+    public void myMethod() {
+        int myVar = 0; // local variable
+        System.out.println("Value of myVar: " + myVar); // accessing local variable
+    }
+}
+
+// Example of Static Variables
+class MyClass {
+    private static int myVar; // static variable
+
+    public static void myMethod() {
+        System.out.println("Value of myVar: " + myVar); // accessing static variable
+    }
+}
+
+// Example of Final Variables
+class MyClass {
+    private final int myVar = 0; // final variable
+
+    public void myMethod() {
+        System.out.println("Value of myVar: " + myVar); // accessing final variable
+        // myVar = 10; // cannot change final variable
+    }
+}
+
+// Example of Final Static Variables
+class MyClass {
+    private static final int myVar = 0; // final static variable
+
+    public static void myMethod() {
+        System.out.println("Value of myVar: " + myVar); // accessing final static variable
+        // myVar = 10; // cannot change final static variable
+    }
+}
+
+// Example of Class Variables
+class MyClass {
+    private static int myVar; // class variable
+
+    public static void myMethod() {
+        System.out.println("Value of myVar: " + myVar); // accessing class variable
+    }
+}
+
+// Example of Instance Static Variables
+class MyClass {
+    private static int myVar; // instance static variable
+
+    public void myMethod() {
+        System.out.println("Value of myVar: " + myVar); // accessing instance static variable
+    }
+}
+
+// Example of Static Block Variables
+class MyClass {
+    private static int myVar; // static block variable
+
+    static {
+        myVar = 0; // initializing static block variable
+    }
+
+    public static void myMethod() {
+        System.out.println("Value of myVar: " + myVar); // accessing static block variable
+    }
+}
+
+//====================================================================================================================================================================================================================================================================================
+
+//** Static Block and Non-static Block **
+
+
+// Static block is executed only once when the class is loaded into memory for the first time.
+// Non-static block is executed every time an object of the class is created.
+
+// Static block is used to initialize static variables and to perform other setup tasks that need to be done only once.
+// Non-static block is used to initialize instance variables and to perform other setup tasks that need to be done every time an object is created.
+
+// Example of Static Block
+class MyClass {
+    static {
+        System.out.println("Static block executed");
+    }
+}
+
+// Example of Non-static Block
+class MyClass {
+    {
+        System.out.println("Non-static block executed");
+    }
+}
+
+// Example of both Static and Non-static Blocks
+class MyClass {
+    static {
+        System.out.println("Static block executed");
+    }
+
+    {
+        System.out.println("Non-static block executed");
+    }
+}
+
+// Output
+// Static block executed
+// Non-static block executed
+// Non-static block executed
+
+// Note: The static block is executed only once when the class is loaded into memory for the first time.
+// The non-static block is executed every time an object of the class is created.
+
+
+//====================================================================================================================================================================================================================================================================================
+
+
+//**Passing Object To a Method**
+
+// We can pass an object to a method in two ways : By Value and By Reference.
+
+//Pass by value :- When we pass an object to a method by value, a copy of the object is passed to the method. Any changes made to the object inside the method will not affect the original object.
+//Pass by reference :- When we pass an object to a method by reference, the original object is passed to the method. Any changes made to the object inside the method will affect the original object
+
+
+class MyClass {
+    private int myVar;
+
+    /**
+     * Returns the value of myVar.
+     * 
+     * @return the value of myVar
+     */
+    public int getMyVar() {
+        return myVar;
+    }
+
+    /**
+     * Sets the value of myVar.
+     * 
+     * @param myVar the new value of myVar
+     */
+    public void setMyVar(int myVar) {
+        this.myVar = myVar;
+    }
+
+    public void myMethod(MyClass obj) {
+        obj.setMyVar(10); // This will change the value of myVar in the original object.
+    }
+
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        obj.setMyVar(5);
+        obj.myMethod(obj);
+        System.out.println(obj.getMyVar()); // This will print 10.
+    }
+}
+//====================================================================================================================================================================================================================================================================================
+
+
+//**toString() method **
+
+// **toString() method is used to convert an object into a string. It is used to print the details of an object.
+// The toString() method is called automatically when we use the print() or println() method to print an object. If we do not override the toString() method, it will print the class name of the object followed by @ and the hash code of the object.
+
+//Example :-
+class MyClass {
+    private int myVar;
+    private String myString;
+    private double myDouble;
+    private boolean myBoolean;
+    private char myChar;
+
+    public MyClass() {}
+
+    public MyClass(int myVar, String myString, double myDouble, boolean myBoolean, char myChar) {
+        this.myVar = myVar;
+        this.myString = myString;
+        this.myDouble = myDouble;
+        this.myBoolean = myBoolean;
+        this.myChar = myChar;
+    }
+
+    public int getMyVar() {
+        return myVar;
+    }
+
+    public void setMyVar(int myVar) {
+        this.myVar = myVar;
+    }
+
+    public String getMyString() {
+        return myString;
+    }
+
+    public void setMyString(String myString) {
+        this.myString = myString;
+    }
+
+    public double getMyDouble() {
+        return myDouble;
+    }
+
+    public void setMyDouble(double myDouble) {
+        this.myDouble = myDouble;
+    }
+
+    public boolean isMyBoolean() {
+        return myBoolean;
+    }
+
+    public void setMyBoolean(boolean myBoolean) {
+        this.myBoolean = myBoolean;
+    }
+
+    public char getMyChar() {
+        return myChar;
+    }
+
+    public void setMyChar(char myChar) {
+        this.myChar = myChar;
+    }
+
+    @Override
+    public String toString() {
+        return "MyClass{" +
+                "myVar=" + myVar +
+                ", myString='" + myString + '\'' +
+                ", myDouble=" + myDouble +
+                ", myBoolean=" + myBoolean +
+                ", myChar=" + myChar +
+                '}';
+    }
+}
+
+
+//====================================================================================================================================================================================================================================================================================
+
+//**  Meaning of public static void main(String[] args)  **//
+
+// The main method is the entry point of a Java program. It is the method where the program starts execution.
+
+// public: The main method is declared as public, which means it can be accessed from any other class.
+
+// static: The main method is declared as static, which means it can be called without creating an instance of the class.
+
+// void: The main method does not return any value, so it is declared as void.
+
+// main: This is the name of the method.
+
+// (String[] args): This is the parameter list of the main method. It takes an array of strings as arguments.
+
+// The main method is used to start the execution of a Java program. It is called by the Java Virtual Machine (JVM) when the program is run.
+
+// Here is an example of a simple main method:
+
+public class MyClass {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+
+// In this example, the main method is declared as public, static, and void. It takes an array of strings as arguments, but it does not use them in this case.
+
+// When the program is run, the JVM calls the main method, which prints "Hello, World!" to the console.
+
+// The main method can also be used to pass command-line arguments to the program. For example:
+
+public class MyClass {
+    public static void main(String[] args) {
+        for (String arg : args) {
+            System.out.println(arg);
+        }
+    }
+}
+
+// In this example, the main method takes an array of strings as arguments, and it prints each argument to the console.
+
+// To pass command-line arguments to the program, you can use the following command:
+
+// java MyClass arg1 arg2 arg3
+
+// This will pass "arg1", "arg2", and "arg3" as arguments to the main method, which will print them to the console.
+
+//====================================================================================================================================================================================================================================================================================
+
+//** Method Overloading **
+// Method overloading is a feature in Java that allows multiple methods with the same name to be defined, 
+// as long as they have different parameter lists. This means that a class can have multiple methods with 
+// the same name, but with different numbers or types of parameters.
+
+// Example:
+class MyClass {
+    // Method to add two integers
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    // Method to add three integers
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    // Method to add two floats
+    public float add(float a, float b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        System.out.println(obj.add(10, 20)); // Output: 30
+        System.out.println(obj.add(10, 20, 30)); // Output: 60
+        System.out.println(obj.add(10.5f, 20.5f)); // Output: 31.0
+    }
+}
+
+
+//====================================================================================================================================================================================================================================================================================
+
+//** Structure of memory in Java **
+
+// In Java, memory is divided into several areas:
+
+// 1. **Method Area**: This area stores the class metadata, such as the class hierarchy and method tables.
+// 2. **Heap**: This area stores the objects created by the application.
+// 3. **Stack**: This area stores the thread's execution stack, including the method call stack and local variables.
+// 4. **Native Method Stack**: This area stores the native method call stack.
+// 5. **PC Register**: This area stores the current instruction pointer.
+// 6. **Native Method Interface**: This area provides a way for Java code to call native methods.
+
+// The memory layout of a Java program can be visualized as follows:
+
+// +---------------+
+// |  Method Area  |
+// +---------------+
+// |  Heap         |
+// +---------------+
+// |  Stack        |
+// +---------------+
+// |  Native Method|
+// |  Stack        |
+// +---------------+
+// |  PC Register  |
+// +---------------+
+// |  Native Method|
+// |  Interface    |
+// +---------------+
+
+// The JVM manages the memory layout and ensures that the program executes correctly.
+
+// The memory allocation process in Java can be summarized as follows:
+
+// 1. The JVM allocates memory for the program's code and data.
+// 2. The program creates objects, which are stored in the heap.
+// 3. The program uses the stack to store local variables and method call information.
+// 4. The program uses the native method stack to store native method call information.
+// 5. The program uses the PC register to store the current instruction pointer.
+// 6. The program uses the native method interface to call native methods.
+
+// The JVM also performs garbage collection to free up memory occupied by objects that are no longer referenced.
+
+// The garbage collection process can be summarized as follows:
+
+// 1. The JVM identifies objects that are no longer referenced.
+// 2. The JVM frees up the memory occupied by those objects.
+// 3. The JVM compacts the heap to remove any holes created by the freed objects.
+
+// The JVM also performs other memory management tasks, such as:
+
+// 1. Memory allocation: The JVM allocates memory for the program's code and data.
+// 2. Memory deallocation: The JVM frees up memory occupied by objects that are no longer referenced.
+// 3. Memory compaction: The JVM compacts the heap to remove any holes created by the freed objects.
+// 4. Memory defragmentation: The JVM defragments the heap to improve memory allocation efficiency.
+
+// In summary, the JVM manages the memory layout and ensures that the program executes correctly by performing tasks such as memory allocation, garbage collection, and memory compaction.
+
+//====================================================================================================================================================================================================================================================================================
+
+//**Arrays in Java**
+
+// Arrays are a collection of elements of the same data type stored in contiguous memory locations.
+
+//**Types of Array Declaration**
+
+// 1. Single Dimensional Array
+int[] myArray;
+
+// 2. Multi Dimensional Array
+int[][] myArray;
+
+// 3. Array of Arrays
+int[] myArray[];
+
+//**Types of Array Initialization**
+
+// 1. Direct Initialization
+int[] myArray = {1, 2, 3, 4, 5};
+
+// 2. Indirect Initialization
+int[] myArray;
+myArray = new int[]{1, 2, 3, 4, 5};
+
+// 3. Dynamic Initialization
+int[] myArray = new int[5];
+myArray[0] = 1;
+myArray[1] = 2;
+myArray[2] = 3;
+myArray[3] = 4;
+myArray[4] = 5;
+
+//**Multi Dimensional Array Initialization**
+
+// 1. Direct Initialization
+int[][] myArray = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+
+// 2. Indirect Initialization
+int[][] myArray;
+myArray = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+
+// 3. Dynamic Initialization
+int[][] myArray = new int[3][3];
+myArray[0][0] = 1;
+myArray[0][1] = 2;
+myArray[0][2] = 3;
+myArray[1][0] = 4;
+myArray[1][1] = 5;
+myArray[1][2] = 6;
+myArray[2][0] = 7;
+myArray[2][1] = 8;
+myArray[2][2] = 9;
+
+//**Example of Array Usage**
+
+public class MyClass {
+    public static void main(String[] args) {
+        int[] myArray = {1, 2, 3, 4, 5};
+        for (int i = 0; i < myArray.length; i++) {
+            System.out.println(myArray[i]);
+        }
+    }
+}
+
+//====================================================================================================================================================================================================================================================================================
+
+class Student {
+    private String name;
+    private int age;
+
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+}
+
+public class MyClass {
+    public static void main(String[] args) {
+        // Create an array of Student objects
+        Student[] students = new Student[3];
+
+        // Initialize the array with Student objects
+        students[0] = new Student("John", 20);
+        students[1] = new Student("Alice", 22);
+        students[2] = new Student("Bob", 21);
+
+        // Access and print the details of each Student object
+        for (int i = 0; i < students.length; i++) {
+            System.out.println("Name: " + students[i].getName() + ", Age: " + students[i].getAge());
+        }
+    }
+}
+
+//====================================================================================================================================================================================================================================================================================
+
+
+// Definition of For Loop:
+// A for loop is a control structure that allows you to execute a block of code repeatedly for a specified number of iterations.
+
+// Definition of For Each Loop:
+// A for-each loop is a type of for loop that allows you to iterate over a collection of elements, such as an array or a list, without having to keep track of the index.
+
+// Syntax of For Loop:
+// for (initialization; condition; increment/decrement) {
+//     // code to be executed
+// }
+
+// Syntax of For Each Loop:
+// for (type variable : collection) {
+//     // code to be executed
+// }
+
+// For Loop with Enhanced Readability
+public class MyClass {
+    public static void main(String[] args) {
+        int[] myArray = {1, 2, 3, 4, 5};
+        for (int index = 0; index < myArray.length; index++) {
+            int currentValue = myArray[index];
+            System.out.println("Element at index " + index + ": " + currentValue);
+        }
+    }
+}
+
+// For Each Loop with Enhanced Readability
+public class MyClass {
+    public static void main(String[] args) {
+        int[] myArray = {1, 2, 3, 4, 5};
+        for (int element : myArray) {
+            System.out.println("Current Element: " + element);
+        }
+    }
+}
+
+
+//====================================================================================================================================================================================================================================================================================
+//====================================================================================================================================================================================================================================================================================
+//====================================================================================================================================================================================================================================================================================
+//====================================================================================================================================================================================================================================================================================
+//====================================================================================================================================================================================================================================================================================
+//====================================================================================================================================================================================================================================================================================
+//====================================================================================================================================================================================================================================================================================
 //====================================================================================================================================================================================================================================================================================
