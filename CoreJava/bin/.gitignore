@@ -1,8 +1,22 @@
 /module-info.class
-<<<<<<< Updated upstream
-/upcastingANDdowncasting/
-/Inheritance/
+/.classpath
+/.gitignore
+/.project
 /Animals/
+/ArraysInJava/
+/ConstructorHomework/
+/Constructor_and_This/
+/Containment/
+/DynamicMethodParameters/
+/GetterSetterHomework/
+/Inheritance/
+/MethodOverloading/
+/MethodOverriding/
+/PassingArrayTofunction/
+/SwapFunction/
+/ToString/
+/VariableScopes/
+/basicJava/
 /instanceOf/
-=======
->>>>>>> Stashed changes
+/introduction_to_java/
+/upcastingANDdowncasting/

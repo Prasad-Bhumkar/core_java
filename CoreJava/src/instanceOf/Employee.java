@@ -6,7 +6,7 @@ public class Employee {
 	private int hra;
 	private int da;
 	
-	public int calCulateSalary()
+	public int calculateSalary()
 	
 	{
 		return basicSal+hra+da;
