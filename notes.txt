@@ -1010,4 +1010,332 @@ public class MyClass {
 //====================================================================================================================================================================================================================================================================================
 //====================================================================================================================================================================================================================================================================================
 //====================================================================================================================================================================================================================================================================================
-//====================================================================================================================================================================================================================================================================================
+// RTTI, Abstract Classes, and Interfaces in Java:
+
+Dynamic Data Type & Method Selection
+References have both static and dynamic types
+Example: Employee ref = new Manager();
+Static type: Employee
+Dynamic type: Manager
+Superclass reference can refer to subclass object
+Method selection is governed by dynamic type
+
+Definition: Dynamic data type and method selection is a feature in Java that allows a superclass reference to refer to a subclass object, and the method selection is based on the dynamic type of the object.
+
+Example:
+```java
+class Employee {
+    void work() {
+        System.out.println("Employee is working");
+    }
+}
+
+class Manager extends Employee {
+    void work() {
+        System.out.println("Manager is working");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Employee ref = new Manager();
+        ref.work(); // Output: Manager is working
+    }
+}
+```
+
+RTTI (Run Time Type Identification)
+Used to identify dynamic data type of an object
+instanceof operator helps check object type
+Java runtime tracks class of each object
+Used for polymorphic access
+
+Definition: RTTI (Run Time Type Identification) is a feature in Java that allows the program to identify the dynamic data type of an object at runtime.
+
+Example:
+```java
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal ref = new Dog();
+        if (ref instanceof Dog) {
+            System.out.println("Ref is a Dog");
+        }
+        ref.sound(); // Output: Dog barks
+    }
+}
+```
+
+Final Keyword
+final variable: Cannot be modified after initialization
+final method: Cannot be overridden in subclass
+final class: Cannot be subclassed
+Private methods are implicitly final
+
+Definition: The final keyword in Java is used to restrict the use of a variable, method, or class.
+
+Example:
+```java
+public class Main {
+    final int MAX_SIZE = 10; // final variable
+    public final void print() { // final method
+        System.out.println("Hello");
+    }
+}
+
+class Animal {
+    private void sound() { // private method is implicitly final
+        System.out.println("Animal makes a sound");
+    }
+}
+
+final class Singleton { // final class
+    private static Singleton instance;
+    private Singleton() {}
+    public static Singleton getInstance() {
+        if (instance == null) {
+            instance = new Singleton();
+        }
+        return instance;
+    }
+}
+```
+
+Object Class
+Cosmic superclass in Java
+Every class implicitly extends Object
+Key methods:
+toString()
+equals()
+hashCode()
+getClass()
+finalize()
+clone()
+wait()
+notify()/notifyAll()
+
+Definition: The Object class is the superclass of all classes in Java, and it provides several key methods that can be used by all objects.
+
+Example:
+```java
+public class Main {
+    public static void main(String[] args) {
+        Object obj = new Object();
+        System.out.println(obj.toString()); // Output: java.lang.Object@15db9742
+        System.out.println(obj.equals(obj)); // Output: true
+        System.out.println(obj.hashCode()); // Output: 366712642
+        System.out.println(obj.getClass()); // Output: class java.lang.Object
+    }
+}
+```
+
+Abstract Classes
+Cannot be instantiated
+Can have both abstract and non-abstract methods
+Abstract methods have no implementation
+Implementation provided by inheriting classes
+
+Definition: An abstract class in Java is a class that cannot be instantiated and is used to provide a partial implementation of a class.
+
+Example:
+```java
+abstract class Animal {
+    abstract void sound(); // abstract method
+    void eat() { // non-abstract method
+        System.out.println("Animal eats");
+    }
+}
+
+class Dog extends Animal {
+    void sound() { // implementation of abstract method
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.sound(); // Output: Dog barks
+        dog.eat(); // Output: Animal eats
+    }
+}
+```
+
+Interfaces
+Defines contract between provider and consumer
+Features:
+All methods are abstract by default
+Data members are public, static, and final
+Class can implement multiple interfaces
+Supports role-based inheritance
+Creates loosely coupled applications
+
+Definition: An interface in Java is a abstract class that defines a contract between a provider and a consumer.
+
+Example:
+```java
+interface Printable {
+    void print(); // abstract method
+}
+
+class Document implements Printable {
+    void print() { // implementation of abstract method
+        System.out.println("Document is printed");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Document doc = new Document();
+        doc.print(); // Output: Document is printed
+    }
+}
+```
+
+Interface New Features (Java 8+)
+Default methods: Provide default implementations
+Static methods: Utility methods that cannot be overridden
+Can have main() method
+
+Definition: Java 8 introduced several new features for interfaces, including default methods, static methods, and the ability to have a main() method.
+
+Example:
+```java
+interface Printable {
+    default void print() { // default method
+        System.out.println("Default print");
+    }
+    static void utilityMethod() { // static method
+        System.out.println("Utility method");
+    }
+    static void main(String[] args) { // main() method
+        System.out.println("Main method");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Printable.utilityMethod(); // Output: Utility method
+        Printable.main(args); // Output: Main method
+    }
+}
+```
+
+Marker Interfaces
+Empty interfaces with no methods/data members
+Used for tagging/marking purpose
+Examples:
+Cloneable
+Serializable
+
+Definition: A marker interface in Java is an interface that has no methods or data members and is used to mark or tag a class.
+
+Example:
+```java
+class MyClass implements Cloneable, Serializable {
+    // implementation
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        if (obj instanceof Cloneable) {
+            System.out.println("Obj is Cloneable");
+        }
+        if (obj instanceof Serializable) {
+            System.out.println("Obj is Serializable");
+        }
+    }
+}
+```
+
+Key Differences: Abstract Class vs Interface
+Abstract Class:
+Can have abstract and non-abstract methods
+Best for closely related objects in hierarchy
+Single inheritance only
+
+Interface:
+All methods abstract (before Java 8)
+Best for contract-based provider model
+Multiple inheritance possible
+
+Definition: An abstract class and an interface are both used to define a blueprint for other classes, but they have different characteristics.
+
+Example:
+```java
+abstract class Animal {
+    abstract void sound(); // abstract method
+    void eat() { // non-abstract method
+        System.out.println("Animal eats");
+    }
+}
+
+interface Printable {
+    void print(); // abstract method
+}
+
+class Dog extends Animal implements Printable {
+    void sound() { // implementation of abstract method
+        System.out.println("Dog barks");
+    }
+    void print() { // implementation of abstract method
+        System.out.println("Dog is printed");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.sound(); // Output: Dog barks
+        dog.eat(); // Output: Animal eats
+        dog.print(); // Output: Dog is printed
+    }
+}
+```
+
+Immutable design
+Important Points:
+Class must implement all interface methods
+Interfaces support multiple inheritance
+Default methods can be overridden
+Static methods cannot be overridden
+
+Definition: Immutable design is a design pattern in Java that ensures that an object's state cannot be changed once it is created.
+
+Example:
+```java
+interface Immutable {
+    void print();
+}
+
+class ImmutableClass implements Immutable {
+    private final int value;
+    public ImmutableClass(int value) {
+        this.value = value;
+    }
+    public void print() {
+        System.out.println("Value: " + value);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        ImmutableClass obj = new ImmutableClass(10);
+        obj.print(); // Output: Value: 10
+        // obj.value = 20; // cannot change the value
+    }
+}
+```
+====================================================================================================================================================================================================================================================================================

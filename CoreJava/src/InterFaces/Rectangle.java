@@ -4,7 +4,7 @@ public class Rectangle extends Shape implements Printable{
 		
 	private double length;
 	private double breadth;
-	
+	private double area;
 	
 	public Rectangle(double length, double breadth) {
 		super();
@@ -14,14 +14,15 @@ public class Rectangle extends Shape implements Printable{
 	}
 
 	@Override
-	public double area() {
+	public void area() {
 		
-		return length*breadth;
+		area = length*breadth;
+		print();
 	}
 	
 	@Override
 	public void print() {
-		System.out.println("Area of Rectangle : "+area());
+		System.out.println("Area of Rectangle : "+area);
 		
 	}
 }
