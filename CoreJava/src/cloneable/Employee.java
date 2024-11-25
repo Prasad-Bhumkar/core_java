@@ -1,5 +1,4 @@
-package basicJava;
-
+package cloneable;
 
 
 public class Employee implements Cloneable{
