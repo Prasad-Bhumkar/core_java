@@ -1,6 +1,5 @@
 /module-info.class
-/InterFaces/
-/basicJava/
-/cloneable/
-/StringsAndStringFunctions/
-/stringsAndStringFunctions/
+/innerclass/
+/accountForInnerClassExample/
+/anonymousInnerClass/
+/lambdaExpression/
