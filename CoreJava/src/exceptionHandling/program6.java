@@ -15,4 +15,4 @@ public class program6 {
 		}
 	}
 }
-//homework checked vs unchecked,throw vs throws
+//homework checked vs unchecked,throw vs throws 
