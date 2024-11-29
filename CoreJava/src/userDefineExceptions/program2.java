@@ -28,7 +28,7 @@ public class program2 {
 			
 			//type 2 (passing message from here)
 			try {
-				throw new InvalidEmailException("you are not allowed to login....!");
+				throw new InvalidEmailException("you are not allowed to login  ....!");
 				}catch(Exception e)
 				{
 					e.printStackTrace();
