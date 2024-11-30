@@ -1,6 +1,6 @@
-package reflection;
+package comparator;
 
-public class Employee {
+public class Employee{
 
     @Override
 	public String toString() {
@@ -51,6 +51,7 @@ public class Employee {
 	public void setEmpSalary(int empSalary) {
 		this.empSalary = empSalary;
 	}
+	
 
   
 

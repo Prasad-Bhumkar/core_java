@@ -1,6 +1,6 @@
-package reflection;
+package collections;
 
-public class Employee {
+public class Employee implements Comparable<Employee>{
 
     @Override
 	public String toString() {
@@ -50,6 +50,25 @@ public class Employee {
 
 	public void setEmpSalary(int empSalary) {
 		this.empSalary = empSalary;
+	}
+	@Override
+	public int compareTo(Employee o) {
+		
+		//this logic is used when w want to sort baseed on empId
+//		if (this.empId>o.empId) 
+//		{
+//			return 1;
+//		}
+//		else if(this.empId<o.empId) 
+//		{
+//			return -1;
+//		}
+//		else 
+//		{
+//			return 0;
+//		}
+		
+		return empName.compareTo(o.empName);
 	}
 
   
