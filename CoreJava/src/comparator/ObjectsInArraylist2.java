@@ -45,7 +45,7 @@ public class ObjectsInArraylist2 {
 		}
 		
 		System.out.println(" ");
-		System.out.println("=============sorted employee list by empSal : =============");
+		System.out.println("============= sorted student list by marks : =============");
 		Collections.sort(studList,new SortedBystudMarks());
 		for(Student stud:studList)
 		{
