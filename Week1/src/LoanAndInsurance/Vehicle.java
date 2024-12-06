@@ -33,7 +33,7 @@ public class Vehicle implements IssueLoan,Insurance
 	@Override
 	public void issueLoan() {
 		if (vehicleType=="4 Wheeler") {
-			double loanAmount = price * 0.75;
+			    
 		} else if(vehicleType=="3 Wheeler") {
 
 		}
