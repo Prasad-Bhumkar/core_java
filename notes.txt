@@ -1,6 +1,6 @@
 //this file contains short notes of java programming
 
-//====================================================================================================================================================================================================================================================================================
+//======================================================================================================================================================================================================
 
 
 //***OOP CONCEPTS***
@@ -15,7 +15,7 @@
 //3. It has identity which is unique to each object.To identify object uniquely we select a single or group of attributes.
 //4. It has responsibility which defines role of the object in the system in which it is present.
 
-//====================================================================================================================================================================================================================================================================================
+//======================================================================================================================================================================================================
 
 
 //*** There are four main Pillars of OOP *** 
@@ -27,13 +27,13 @@
 //2. Encapsulation: It is a mechanism used to hide data, internal structure and implementation of object.Interaction with the object is provided through its public interface of operations.
 //Encapsulation is achieved through classes, which wrap data and methods into a single unit, hiding internal implementation details from the outside world.
 
-//3. Inheritance: It is a mechanism in which One object can acquire properties of another object.It helps to handle complexity through classification.User knows only about the interface. Any changes to the implementation will not affect the user.
+//3. Inheritance: It is a mechanism in which One object can acquire properties of another object.It helps to handle complexity through classification.User knows only about the interface. Any changes to implementation details do not affect the user.
 //Inheritance is achieved through classes and interfaces, allowing one class to inherit the properties and behavior of another class.
 
-//4. Polymorphism: The ability of different types of related objects to respond to the same message in their own way It's called as polymerism.A single command or method call can trigger different implementation and behaviour for the object upon which it is invoked.
-//Polymorphism can be achieved through method overloading and method overriding, allowing objects of different classes to be treated as objects of a common superclass, and enabling more flexibility in programming.
+//4. Polymorphism: The ability of different types of related objects to respond to the same message in their own way It's called as polymerism.A single command or method call can trigger different implementations depending on the object.
+//Polymorphism can be achieved through method overloading and method overriding, allowing objects of different classes to be treated as objects of a common superclass, and enabling more flexibility in code.
 
-//====================================================================================================================================================================================================================================================================================
+//======================================================================================================================================================================================================
 
 
 //*** Types of relationships ***
@@ -50,25 +50,19 @@
 // Aggregation : Physical presence is not necessary for the working of object.Object can still be working without these elements or attributes.
 
 
-//==================================================================================================================================================================================================================================================================================
+//======================================================================================================================================================================================================
 
 
 //***Features of Java***
 
 //1.Platform independence: Java code can be compiled once and run anywhere.Bytecode can be transported on any operating system and hardware. Java is platform independent but strictly dependent upon jvm.
-
 //2. Portable:  Java code can be easily moved from one environment to another without any changes.
-
 //3. Simple: Java is a simple language to learn and use.
-
 //4. Robust: Java is a robust language because it is designed to prevent errors and exceptions.
-
 //5. Object-oriented: Java is an object-oriented language that supports the principles of encapsulation, inheritance, and polymorphism.
-
 //6. Multithreaded: Java supports multithreading, which allows for concurrent execution of  multiple threads of execution.
 
-//====================================================================================================================================================================================================================================================================================
-
+//======================================================================================================================================================================================================
 
 
 //***Data types in Java***
@@ -95,7 +89,7 @@
 //   i. Autoboxing and Unboxing: These are the features that are used to convert primitive data types to objects and vice versa, such as int to Integer, etc.
 
 
-//====================================================================================================================================================================================================================================================================================
+//======================================================================================================================================================================================================
 
 
 //***Execution of Java application in JVM***
@@ -135,7 +129,7 @@
 //10. Shutdown: The JVM shuts down when the application exits or when the JVM is explicitly shut down.
 
 
-//====================================================================================================================================================================================================================================================================================
+//======================================================================================================================================================================================================
 
 
 //*** JDK,JVM,JRE ***
@@ -152,7 +146,7 @@
 //   JVM = JRE + Runtime Environment
 
 
-//====================================================================================================================================================================================================================================================================================
+//======================================================================================================================================================================================================
 
 
 //*** Access Specifiers in Java ***
@@ -277,7 +271,7 @@ public class MyOtherClass extends MyClass {
 }
 
 
-//====================================================================================================================================================================================================================================================================================
+//======================================================================================================================================================================================================
 
 //** this. keyword vs this() **
 // this : keyword is used to refer to the current object of the class. It is used to access the members of the class and to call other methods of the class.
@@ -314,7 +308,7 @@ class MyClass {
     }
 }
 
-//====================================================================================================================================================================================================================================================================================
+//======================================================================================================================================================================================================
 
 
 //** Constructor Chaining **
@@ -342,7 +336,7 @@ class MyClass {
 }
 
 
-//====================================================================================================================================================================================================================================================================================
+//======================================================================================================================================================================================================
 
 
 //** static keyword **
@@ -367,7 +361,7 @@ class MyClass {
 }
 
 
-//====================================================================================================================================================================================================================================================================================
+//======================================================================================================================================================================================================
 
 
 //**Accessor and Mutator Methods**
@@ -399,7 +393,7 @@ class MyClass {
 }
 
 
-//====================================================================================================================================================================================================================================================================================
+//======================================================================================================================================================================================================
 
 
 //**Constructor And Destructor**
@@ -446,7 +440,7 @@ class MyClass {
 }
 
 
-//====================================================================================================================================================================================================================================================================================
+//======================================================================================================================================================================================================
 
 //** Types of variables **
 
@@ -552,7 +546,7 @@ class MyClass {
     }
 }
 
-//====================================================================================================================================================================================================================================================================================
+//======================================================================================================================================================================================================
 
 //** Static Block and Non-static Block **
 
@@ -597,7 +591,7 @@ class MyClass {
 // The non-static block is executed every time an object of the class is created.
 
 
-//====================================================================================================================================================================================================================================================================================
+//======================================================================================================================================================================================================
 
 
 //**Passing Object To a Method**
@@ -640,13 +634,13 @@ class MyClass {
         System.out.println(obj.getMyVar()); // This will print 10.
     }
 }
-//====================================================================================================================================================================================================================================================================================
+//======================================================================================================================================================================================================
 
 
 //**toString() method **
 
 // **toString() method is used to convert an object into a string. It is used to print the details of an object.
-// The toString() method is called automatically when we use the print() or println() method to print an object. If we do not override the toString() method, it will print the class name of the object followed by @ and the hash code of the object.
+// The toString() method is called automatically when we use the print() or println() method to print an object. If we do not override the toString() method, it will print the class name of the object followed by its hashcode.
 
 //Example :-
 class MyClass {
@@ -719,7 +713,7 @@ class MyClass {
 }
 
 
-//====================================================================================================================================================================================================================================================================================
+//======================================================================================================================================================================================================
 
 //**  Meaning of public static void main(String[] args)  **//
 
@@ -767,7 +761,7 @@ public class MyClass {
 
 // This will pass "arg1", "arg2", and "arg3" as arguments to the main method, which will print them to the console.
 
-//====================================================================================================================================================================================================================================================================================
+//======================================================================================================================================================================================================
 
 //** Method Overloading **
 // Method overloading is a feature in Java that allows multiple methods with the same name to be defined, 
@@ -800,7 +794,7 @@ class MyClass {
 }
 
 
-//====================================================================================================================================================================================================================================================================================
+//======================================================================================================================================================================================================
 
 //** Structure of memory in Java **
 
@@ -859,7 +853,7 @@ class MyClass {
 
 // In summary, the JVM manages the memory layout and ensures that the program executes correctly by performing tasks such as memory allocation, garbage collection, and memory compaction.
 
-//====================================================================================================================================================================================================================================================================================
+//======================================================================================================================================================================================================
 
 //**Arrays in Java**
 
@@ -925,7 +919,7 @@ public class MyClass {
     }
 }
 
-//====================================================================================================================================================================================================================================================================================
+//======================================================================================================================================================================================================
 
 class Student {
     private String name;
@@ -962,7 +956,7 @@ public class MyClass {
     }
 }
 
-//====================================================================================================================================================================================================================================================================================
+//======================================================================================================================================================================================================
 
 
 // Definition of For Loop:
@@ -1002,340 +996,345 @@ public class MyClass {
     }
 }
 
+//======================================================================================================================================================================================================
 
-//====================================================================================================================================================================================================================================================================================
-//====================================================================================================================================================================================================================================================================================
-//====================================================================================================================================================================================================================================================================================
-//====================================================================================================================================================================================================================================================================================
-//====================================================================================================================================================================================================================================================================================
-//====================================================================================================================================================================================================================================================================================
-//====================================================================================================================================================================================================================================================================================
-// RTTI, Abstract Classes, and Interfaces in Java:
 
-Dynamic Data Type & Method Selection
-References have both static and dynamic types
-Example: Employee ref = new Manager();
-Static type: Employee
-Dynamic type: Manager
-Superclass reference can refer to subclass object
-Method selection is governed by dynamic type
+//** Exception Handling in Java **
 
-Definition: Dynamic data type and method selection is a feature in Java that allows a superclass reference to refer to a subclass object, and the method selection is based on the dynamic type of the object.
+// Exception handling is a mechanism to handle runtime errors. It helps to maintain the normal flow of the application even when exceptions occur.
 
-Example:
-```java
-class Employee {
-    void work() {
-        System.out.println("Employee is working");
+// try-catch block: Used to handle exceptions.
+try {
+    // Code that may throw an exception
+} catch (ExceptionType e) {
+    // Code to handle the exception
+}
+
+// finally block: Executes code regardless of whether an exception occurs or not.
+try {
+    // Code
+} catch (ExceptionType e) {
+    // Exception handling
+} finally {
+    // Cleanup code
+}
+
+// throw keyword: Used to throw an exception explicitly.
+throw new ExceptionType("Error message");
+
+// throws keyword: Used in method signature to declare that method may throw exception.
+public void myMethod() throws IOException {
+    // code
+}
+
+// Checked vs Unchecked Exceptions:
+// Checked exceptions are checked at compile-time (e.g., IOException).
+// Unchecked exceptions are checked at runtime (e.g., NullPointerException).
+
+// Custom Exception Example:
+class MyCustomException extends Exception {
+    public MyCustomException(String message) {
+        super(message);
     }
 }
 
-class Manager extends Employee {
-    void work() {
-        System.out.println("Manager is working");
+// Example usage:
+try {
+    throw new MyCustomException("Custom error occurred!");
+} catch (MyCustomException e) {
+    System.out.println(e.getMessage());
+}
+
+
+//======================================================================================================================================================================================================
+
+
+//** Interfaces and Abstract Classes **
+
+// Interface: A reference type in Java, similar to a class, that can contain only constants, method signatures, default methods, static methods, and nested types.
+// All methods in interfaces are abstract by default (till Java 7).
+interface MyInterface {
+    void display();
+    default void show() {
+        System.out.println("Default method in interface");
     }
 }
 
-public class Main {
-    public static void main(String[] args) {
-        Employee ref = new Manager();
-        ref.work(); // Output: Manager is working
-    }
-}
-```
-
-RTTI (Run Time Type Identification)
-Used to identify dynamic data type of an object
-instanceof operator helps check object type
-Java runtime tracks class of each object
-Used for polymorphic access
-
-Definition: RTTI (Run Time Type Identification) is a feature in Java that allows the program to identify the dynamic data type of an object at runtime.
-
-Example:
-```java
-class Animal {
-    void sound() {
-        System.out.println("Animal makes a sound");
+// Abstract Class: A class that cannot be instantiated and may contain abstract methods (without implementation).
+abstract class MyAbstractClass {
+    abstract void display();
+    void show() {
+        System.out.println("Concrete method in abstract class");
     }
 }
 
-class Dog extends Animal {
-    void sound() {
-        System.out.println("Dog barks");
+// Difference: Abstract classes can have method implementations and state. Interfaces cannot have state and all methods are abstract (till Java 8, after which default/static methods are allowed).
+
+
+//======================================================================================================================================================================================================
+
+
+//** Collections Framework **
+
+// The Collections framework provides classes and interfaces for storing and manipulating groups of data as a single unit.
+
+// Common Interfaces: List, Set, Queue, Map
+// List: Ordered collection, allows duplicates. Example: ArrayList, LinkedList
+// Set: No duplicates allowed. Example: HashSet, TreeSet
+// Queue: Used to hold multiple elements prior to processing. Example: PriorityQueue, LinkedList
+// Map: Key-value pairs. Example: HashMap, TreeMap
+
+import java.util.*;
+
+List<Integer> list = new ArrayList<>();
+Set<String> set = new HashSet<>();
+Queue<Double> queue = new LinkedList<>();
+Map<Integer, String> map = new HashMap<>();
+
+// Iterating Collections
+for (int num : list) {
+    System.out.println(num);
+}
+for (String s : set) {
+    System.out.println(s);
+}
+for (Map.Entry<Integer, String> entry : map.entrySet()) {
+    System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+}
+
+// Comparable and Comparator for custom sorting
+class Student implements Comparable<Student> {
+    int age;
+    public int compareTo(Student s) {
+        return this.age - s.age;
+    }
+}
+Comparator<Student> byName = new Comparator<Student>() {
+    public int compare(Student s1, Student s2) {
+        return s1.name.compareTo(s2.name);
+    }
+};
+
+
+//======================================================================================================================================================================================================
+
+
+//** Generics in Java **
+
+// Generics allow you to write code that works with any type while providing compile-time type safety.
+// Example of a generic class:
+class Box<T> {
+    private T value;
+    public void set(T value) { this.value = value; }
+    public T get() { return value; }
+}
+
+// Bounded types:
+class NumberBox<T extends Number> { /* ... */ }
+
+// Wildcards:
+List<?> list = new ArrayList<Integer>(); // can accept any type
+List<? extends Number> numList; // accepts Number or its subclasses
+
+// Generic methods:
+public <T> void printArray(T[] array) {
+    for (T item : array) {
+        System.out.println(item);
     }
 }
 
-public class Main {
-    public static void main(String[] args) {
-        Animal ref = new Dog();
-        if (ref instanceof Dog) {
-            System.out.println("Ref is a Dog");
+
+//======================================================================================================================================================================================================
+
+
+//** Inner Classes and Lambda Expressions **
+
+// Inner class: A class defined within another class. Can access members of the enclosing class.
+class Outer {
+    class Inner {
+        void show() {
+            System.out.println("Inside Inner class");
         }
-        ref.sound(); // Output: Dog barks
-    }
-}
-```
-
-Final Keyword
-final variable: Cannot be modified after initialization
-final method: Cannot be overridden in subclass
-final class: Cannot be subclassed
-Private methods are implicitly final
-
-Definition: The final keyword in Java is used to restrict the use of a variable, method, or class.
-
-Example:
-```java
-public class Main {
-    final int MAX_SIZE = 10; // final variable
-    public final void print() { // final method
-        System.out.println("Hello");
     }
 }
 
-class Animal {
-    private void sound() { // private method is implicitly final
-        System.out.println("Animal makes a sound");
+// Anonymous Inner Class: Used for implementing interfaces or abstract classes on the fly.
+Runnable r = new Runnable() {
+    public void run() {
+        System.out.println("Running in anonymous inner class");
+    }
+};
+
+// Lambda Expressions (Java 8+): Used for functional interfaces.
+Runnable r2 = () -> System.out.println("Running in lambda expression");
+
+// Functional Interface: An interface with only one abstract method.
+@FunctionalInterface
+interface MyFunc {
+    void doSomething();
+}
+
+
+//======================================================================================================================================================================================================
+
+
+//** File I/O in Java **
+
+// Reading and writing files using File, FileReader, FileWriter, BufferedReader, BufferedWriter, Scanner.
+import java.io.*;
+
+try {
+    BufferedReader br = new BufferedReader(new FileReader("input.txt"));
+    String line = br.readLine();
+    br.close();
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+try {
+    BufferedWriter bw = new BufferedWriter(new FileWriter("output.txt"));
+    bw.write("Hello, world!");
+    bw.close();
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+// Serialization - converting an object into a byte stream
+class Student implements Serializable {
+    private static final long serialVersionUID = 1L;
+    String name;
+}
+
+// Deserialization - restoring an object from a byte stream
+
+
+//======================================================================================================================================================================================================
+
+
+//** Multithreading (Advanced) **
+
+// Creating threads by extending Thread or implementing Runnable
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread running");
+    }
+}
+class MyRunnable implements Runnable {
+    public void run() {
+        System.out.println("Runnable running");
     }
 }
 
-final class Singleton { // final class
+// Synchronization - prevents concurrent access to critical sections
+synchronized void mySyncMethod() {
+    // synchronized code
+}
+
+// wait(), notify(), notifyAll() - for thread communication
+
+// Executors (Java 5+): Used for managing thread pools
+import java.util.concurrent.*;
+ExecutorService executor = Executors.newFixedThreadPool(2);
+executor.submit(new MyRunnable());
+executor.shutdown();
+
+
+//======================================================================================================================================================================================================
+
+
+//** Java 8 Features (Lambdas, Streams, Optionals) **
+
+// Lambda Expressions: (parameters) -> expression
+List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+names.forEach(name -> System.out.println(name));
+
+// Streams API: Provides a functional approach to processing collections
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4);
+numbers.stream().filter(n -> n % 2 == 0).forEach(System.out::println);
+
+// Optional: Avoids null pointer exceptions
+Optional<String> optional = Optional.of("Hello");
+optional.ifPresent(System.out::println);
+
+
+//======================================================================================================================================================================================================
+
+
+//** Annotations and Reflection **
+
+// Annotations provide metadata for code. Example: @Override, @Deprecated, @FunctionalInterface
+@Override
+public String toString() { return "Overridden"; }
+
+// Custom Annotation
+@interface MyAnnotation {
+    String value();
+}
+
+// Reflection: Inspect or modify runtime behavior of classes
+import java.lang.reflect.*;
+Class<?> clazz = Class.forName("MyClass");
+Method[] methods = clazz.getDeclaredMethods();
+for (Method m : methods) {
+    System.out.println(m.getName());
+}
+
+
+//======================================================================================================================================================================================================
+
+
+//** Packages and Imports **
+
+// Package: A namespace for organizing classes and interfaces.
+// Syntax to declare a package at top of Java file:
+package com.example.myapp;
+
+// Importing classes from packages
+import java.util.List;
+
+
+//======================================================================================================================================================================================================
+
+
+//** Unit Testing with JUnit **
+
+// JUnit is a framework for unit testing Java code.
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class MyTest {
+    @Test
+    public void testSum() {
+        assertEquals(5, 2 + 3);
+    }
+}
+
+
+//======================================================================================================================================================================================================
+
+
+//** Design Patterns (Examples) **
+
+// Singleton Pattern: Ensures only one instance of a class exists.
+class Singleton {
     private static Singleton instance;
     private Singleton() {}
     public static Singleton getInstance() {
-        if (instance == null) {
-            instance = new Singleton();
-        }
+        if (instance == null) instance = new Singleton();
         return instance;
     }
 }
-```
 
-Object Class
-Cosmic superclass in Java
-Every class implicitly extends Object
-Key methods:
-toString()
-equals()
-hashCode()
-getClass()
-finalize()
-clone()
-wait()
-notify()/notifyAll()
-
-Definition: The Object class is the superclass of all classes in Java, and it provides several key methods that can be used by all objects.
-
-Example:
-```java
-public class Main {
-    public static void main(String[] args) {
-        Object obj = new Object();
-        System.out.println(obj.toString()); // Output: java.lang.Object@15db9742
-        System.out.println(obj.equals(obj)); // Output: true
-        System.out.println(obj.hashCode()); // Output: 366712642
-        System.out.println(obj.getClass()); // Output: class java.lang.Object
-    }
-}
-```
-
-Abstract Classes
-Cannot be instantiated
-Can have both abstract and non-abstract methods
-Abstract methods have no implementation
-Implementation provided by inheriting classes
-
-Definition: An abstract class in Java is a class that cannot be instantiated and is used to provide a partial implementation of a class.
-
-Example:
-```java
-abstract class Animal {
-    abstract void sound(); // abstract method
-    void eat() { // non-abstract method
-        System.out.println("Animal eats");
+// Factory Pattern: Used to create objects without specifying the exact class.
+interface Animal { void speak(); }
+class Dog implements Animal { public void speak() { System.out.println("Woof"); } }
+class Cat implements Animal { public void speak() { System.out.println("Meow"); } }
+class AnimalFactory {
+    public static Animal getAnimal(String type) {
+        if (type.equals("Dog")) return new Dog();
+        else return new Cat();
     }
 }
 
-class Dog extends Animal {
-    void sound() { // implementation of abstract method
-        System.out.println("Dog barks");
-    }
-}
 
-public class Main {
-    public static void main(String[] args) {
-        Dog dog = new Dog();
-        dog.sound(); // Output: Dog barks
-        dog.eat(); // Output: Animal eats
-    }
-}
-```
-
-Interfaces
-Defines contract between provider and consumer
-Features:
-All methods are abstract by default
-Data members are public, static, and final
-Class can implement multiple interfaces
-Supports role-based inheritance
-Creates loosely coupled applications
-
-Definition: An interface in Java is a abstract class that defines a contract between a provider and a consumer.
-
-Example:
-```java
-interface Printable {
-    void print(); // abstract method
-}
-
-class Document implements Printable {
-    void print() { // implementation of abstract method
-        System.out.println("Document is printed");
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Document doc = new Document();
-        doc.print(); // Output: Document is printed
-    }
-}
-```
-
-Interface New Features (Java 8+)
-Default methods: Provide default implementations
-Static methods: Utility methods that cannot be overridden
-Can have main() method
-
-Definition: Java 8 introduced several new features for interfaces, including default methods, static methods, and the ability to have a main() method.
-
-Example:
-```java
-interface Printable {
-    default void print() { // default method
-        System.out.println("Default print");
-    }
-    static void utilityMethod() { // static method
-        System.out.println("Utility method");
-    }
-    static void main(String[] args) { // main() method
-        System.out.println("Main method");
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Printable.utilityMethod(); // Output: Utility method
-        Printable.main(args); // Output: Main method
-    }
-}
-```
-
-Marker Interfaces
-Empty interfaces with no methods/data members
-Used for tagging/marking purpose
-Examples:
-Cloneable
-Serializable
-
-Definition: A marker interface in Java is an interface that has no methods or data members and is used to mark or tag a class.
-
-Example:
-```java
-class MyClass implements Cloneable, Serializable {
-    // implementation
-}
-
-public class Main {
-    public static void main(String[] args) {
-        MyClass obj = new MyClass();
-        if (obj instanceof Cloneable) {
-            System.out.println("Obj is Cloneable");
-        }
-        if (obj instanceof Serializable) {
-            System.out.println("Obj is Serializable");
-        }
-    }
-}
-```
-
-Key Differences: Abstract Class vs Interface
-Abstract Class:
-Can have abstract and non-abstract methods
-Best for closely related objects in hierarchy
-Single inheritance only
-
-Interface:
-All methods abstract (before Java 8)
-Best for contract-based provider model
-Multiple inheritance possible
-
-Definition: An abstract class and an interface are both used to define a blueprint for other classes, but they have different characteristics.
-
-Example:
-```java
-abstract class Animal {
-    abstract void sound(); // abstract method
-    void eat() { // non-abstract method
-        System.out.println("Animal eats");
-    }
-}
-
-interface Printable {
-    void print(); // abstract method
-}
-
-class Dog extends Animal implements Printable {
-    void sound() { // implementation of abstract method
-        System.out.println("Dog barks");
-    }
-    void print() { // implementation of abstract method
-        System.out.println("Dog is printed");
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Dog dog = new Dog();
-        dog.sound(); // Output: Dog barks
-        dog.eat(); // Output: Animal eats
-        dog.print(); // Output: Dog is printed
-    }
-}
-```
-
-Immutable design
-Important Points:
-Class must implement all interface methods
-Interfaces support multiple inheritance
-Default methods can be overridden
-Static methods cannot be overridden
-
-Definition: Immutable design is a design pattern in Java that ensures that an object's state cannot be changed once it is created.
-
-Example:
-```java
-interface Immutable {
-    void print();
-}
-
-class ImmutableClass implements Immutable {
-    private final int value;
-    public ImmutableClass(int value) {
-        this.value = value;
-    }
-    public void print() {
-        System.out.println("Value: " + value);
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        ImmutableClass obj = new ImmutableClass(10);
-        obj.print(); // Output: Value: 10
-        // obj.value = 20; // cannot change the value
-    }
-}
-```
-====================================================================================================================================================================================================================================================================================
+//======================================================================================================================================================================================================
