@@ -986,7 +986,9 @@ public class MyClass {
 // Method overloading is a feature in Java that allows multiple methods with the same name to be defined, 
 // as long as they have different parameter lists. This means that a class can have multiple methods with 
 // the same name, but with different numbers or types of parameters.
-
+//This is achieved by:- 1.no. of parameters 
+                        2.datatypes of parameters 
+                        3.order of parameters
 // Example:
 class MyClass {
     // Method to add two integers
@@ -994,14 +996,19 @@ class MyClass {
         return a + b;
     }
 
-    // Method to add three integers
-    public int add(int a, int b, int c) {
-        return a + b + c;
+    // Method to add two floats (datatype changed)
+    public float add(float a, int b) {
+        return a + b;
     }
 
-    // Method to add two floats
-    public float add(float a, float b) {
+    // Method to add two floats (order of params changed)
+    public float add(int a, float b) {
         return a + b;
+    }
+
+    // Method to add three integers (number of params changed)
+    public int add(int a, int b, int c) {
+        return a + b + c;
     }
 
     public static void main(String[] args) {
