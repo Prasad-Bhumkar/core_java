@@ -446,8 +446,8 @@ class MyClass {
 //They are also known as data members or Non-static . They are used to store the stateof an object.
 // 2. Local Variables : These are the variables that are defined inside a method. 
 // They are used to store temporary values that are used within the method. They are also known as method variables or formal parameters.
-// 3. Static Variables : These are the variables that are shared by all objects of a class.
-//They are used to store values that are common to all objects of a class. They are also called as class variables.
+// 3. Static Variables : These are the variables that are shared by all objects of a class. They are created only once.
+//They are used to store values that are common to all objects of a class. They are also called as class variables with default value for all objects.
 
 
 // 4. Final Variables : These are the variables that cannot be changed once they are
@@ -455,8 +455,9 @@ class MyClass {
 // initialized.
 // 5. Final Static Variables : These are the variables that are shared by all objects of a
 // class and cannot be changed once they are initialized.
-// 6. Class Variables : These are the variables that are shared by all objects of a class
-// and are used to store values that are common to all objects of a class.
+// 6. Class Variables (instance variables) : These are the variables that are shared by all objects of a class
+// and are used to store values that are expected to change for every object to represent its unique state.
+// For every object their copy is created unlike static variables where they are creted only once. 
 // 7. Instance Static Variables : These are the variables that are shared by all objects of a
 // class and are used to store values that are common to all objects of a class.
 // 8. Static Block Variables : These are the variables that are defined inside a static block
@@ -547,46 +548,277 @@ class MyClass {
 
 //** Static Block and Non-static Block **
 
+Here’s an **elaborate explanation** of **static blocks** and **non-static blocks** in Java, along with **scenario-based examples** to illustrate their usage and importance:
 
-// Static block is executed only once when the class is loaded into memory for the first time.
-// Non-static block is executed every time an object of the class is created.
+---
 
-// Static block is used to initialize static variables and to perform other setup tasks that need to be done only once.
-// Non-static block is used to initialize instance variables and to perform other setup tasks that need to be done every time an object is created.
+### **Key Differences**
+| **Aspect**               | **Static Block**                                                      | **Non-Static Block**                                                        |
+|--------------------------|-----------------------------------------------------------------------|-----------------------------------------------------------------------------|
+| **Execution Frequency**  | Runs **once** when the class is loaded by the JVM.                    | Runs **every time** an object of the class is created.                      |
+| **Purpose**              | Initialize **static variables** or perform one-time setup tasks.      | Initialize **instance variables** or perform tasks for each object creation.|
+| **Access to Members**    | Can access **static variables** only.                                 | Can access **both static and instance variables**.                          |
+| **Order of Execution**   | Executes **before** any instance blocks or constructors.              | Executes **after** static blocks but **before** constructors.               |
+=================================================================================================================================================================================
+---
 
-// Example of Static Block
-class MyClass {
+### **Scenario-Based Examples**
+
+#### **1. Static Block: One-Time Initialization**
+**Use Case**: Loading configuration data or initializing a shared resource (e.g., a database connection pool).
+
+```java
+class Database {
+    static String dbURL;
+
     static {
-        System.out.println("Static block executed");
+        // Simulate loading configuration from a file
+        dbURL = "jdbc:mysql://localhost:3306/mydb";
+        System.out.println("Static Block: Database URL initialized to " + dbURL);
+    }
+
+    public Database() {
+        System.out.println("Constructor: Creating a new database connection...");
     }
 }
 
-// Example of Non-static Block
-class MyClass {
+public class Main {
+    public static void main(String[] args) {
+        Database db1 = new Database();  // Static block runs once
+        Database db2 = new Database();  // Static block does NOT run again
+    }
+}
+```
+
+**Output**:
+```
+Static Block: Database URL initialized to jdbc:mysql://localhost:3306/mydb
+Constructor: Creating a new database connection...
+Constructor: Creating a new database connection...
+```
+
+**Explanation**:  
+- The `static` block runs **only once** when the `Database` class is loaded, even though two objects (`db1` and `db2`) are created.  
+- This ensures the database URL is loaded once, avoiding redundant operations.
+
+---
+
+#### **2. Non-Static Block: Per-Instance Initialization**
+**Use Case**: Logging object creation or initializing default values for each instance.
+
+```java
+class User {
+    String name;
+    int id;
+
     {
-        System.out.println("Non-static block executed");
+        // Non-static block
+        System.out.println("Non-Static Block: Initializing default values...");
+        id = 100;  // Default ID
+    }
+
+    public User(String name) {
+        this.name = name;
+        System.out.println("Constructor: User " + name + " created with ID " + id);
     }
 }
 
-// Example of both Static and Non-static Blocks
-class MyClass {
+public class Main {
+    public static void main(String[] args) {
+        User user1 = new User("Alice");  // Non-static block runs
+        User user2 = new User("Bob");    // Non-static block runs again
+    }
+}
+```
+
+**Output**:
+```
+Non-Static Block: Initializing default values...
+Constructor: User Alice created with ID 100
+Non-Static Block: Initializing default values...
+Constructor: User Bob created with ID 100
+```
+
+**Explanation**:  
+- The non-static block runs **every time** a `User` object is created.  
+- It sets a default `id` value for all instances, ensuring consistency across objects.
+
+---
+
+#### **3. Combining Static and Non-Static Blocks**
+**Use Case**: Tracking the number of instances created for a class.
+
+```java
+class Counter {
+    static int count = 0;  // Shared across all instances
+
+    {
+        // Non-static block
+        count++;
+        System.out.println("Non-Static Block: Instance count updated to " + count);
+    }
+
     static {
-        System.out.println("Static block executed");
+        // Static block
+        System.out.println("Static Block: Initializing counter...");
     }
 
-    {
-        System.out.println("Non-static block executed");
+    public Counter() {
+        System.out.println("Constructor: New Counter instance created.");
     }
 }
 
-// Output
-// Static block executed
-// Non-static block executed
-// Non-static block executed
+public class Main {
+    public static void main(String[] args) {
+        Counter c1 = new Counter();
+        Counter c2 = new Counter();
+    }
+}
+```
 
-// Note: The static block is executed only once when the class is loaded into memory for the first time.
-// The non-static block is executed every time an object of the class is created.
+**Output**:
+```
+Static Block: Initializing counter...
+Non-Static Block: Instance count updated to 1
+Constructor: New Counter instance created.
+Non-Static Block: Instance count updated to 2
+Constructor: New Counter instance created.
+```
 
+**Explanation**:  
+- The `static` block initializes the `count` variable once.  
+- The non-static block increments `count` every time a new object is created.  
+- This demonstrates how static and non-static blocks work together for class-level and instance-level tasks.
+
+---
+
+#### **4. Static Block: Exception Handling**
+**Use Case**: Validating class-level dependencies during initialization.
+
+```java
+class Validator {
+    static boolean isValid;
+
+    static {
+        try {
+            // Simulate a validation check
+            System.out.println("Static Block: Validating configuration...");
+            isValid = validateConfig();
+        } catch (Exception e) {
+            System.out.println("Static Block: Validation failed!");
+            isValid = false;
+        }
+    }
+
+    private static boolean validateConfig() {
+        // Simulate a failure
+        throw new RuntimeException("Invalid config file!");
+    }
+
+    public Validator() {
+        if (!isValid) {
+            throw new IllegalStateException("Class not properly initialized!");
+        }
+        System.out.println("Constructor: Validator initialized successfully.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        new Validator();  // This will throw an error due to failed validation
+    }
+}
+```
+
+**Output**:
+```
+Static Block: Validating configuration...
+Static Block: Validation failed!
+Exception in thread "main" java.lang.ExceptionInInitializerError
+Caused by: java.lang.RuntimeException: Invalid config file!
+```
+
+**Explanation**:  
+- The static block performs critical validation before any objects can be created.  
+- If validation fails, the class cannot be initialized, preventing invalid object creation.
+
+---
+
+#### **5. Non-Static Block: Input Validation**
+**Use Case**: Ensuring valid data for each instance.
+
+```java
+class Employee {
+    int age;
+
+    {
+        // Non-static block
+        System.out.println("Non-Static Block: Validating age...");
+        if (age < 0) {
+            throw new IllegalArgumentException("Age cannot be negative!");
+        }
+    }
+
+    public Employee(int age) {
+        this.age = age;
+        System.out.println("Constructor: Employee with age " + age + " created.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Employee e1 = new Employee(30);  // Valid
+        Employee e2 = new Employee(-5);  // Throws exception
+    }
+}
+```
+
+**Output**:
+```
+Non-Static Block: Validating age...
+Constructor: Employee with age 30 created.
+Non-Static Block: Validating age...
+Exception in thread "main" java.lang.IllegalArgumentException: Age cannot be negative!
+```
+
+**Explanation**:  
+- The non-static block validates the `age` field **before** the constructor completes.  
+- This ensures all `Employee` objects have valid data.
+
+---
+
+### **Best Practices**
+1. **Use static blocks** for:
+   - One-time setup (e.g., loading libraries, initializing static variables).
+   - Validating class-level dependencies.
+2. **Use non-static blocks** for:
+   - Initializing instance variables with logic.
+   - Avoiding code duplication across constructors.
+   - Enforcing invariants for every object.
+
+---
+
+### **When Are Blocks Executed?**
+1. **Static Block**:  
+   - When the class is **loaded** (e.g., via `Class.forName()` or creating the first instance).
+2. **Non-Static Block**:  
+   - Before the constructor runs, **every time** an object is created.
+
+**Order of Execution**:
+```java
+class Demo {
+    static { System.out.println("Static Block"); }
+    { System.out.println("Non-Static Block"); }
+    Demo() { System.out.println("Constructor"); }
+}
+
+// Output for new Demo():
+// Static Block (only once)
+// Non-Static Block
+// Constructor
+```
+
+By combining static and non-static blocks, you can elegantly separate class-level and instance-level initialization logic.
 
 //======================================================================================================================================================================================================
 
