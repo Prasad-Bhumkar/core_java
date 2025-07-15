@@ -824,45 +824,35 @@ By combining static and non-static blocks, you can elegantly separate class-leve
 
 
 //**Passing Object To a Method**
+In Java, objects are always passed by value , but there's a subtle distinction due to how Java handles object references. Here's a detailed breakdown:
 
-// We can pass an object to a method in two ways : By Value and By Reference.
-
-//Pass by value :- When we pass an object to a method by value, a copy of the object is passed to the method. Any changes made to the object inside the method will not affect the original object.
-//Pass by reference :- When we pass an object to a method by reference, the original object is passed to the method. Any changes made to the object inside the method will affect the original object
-
-
+Key Concept: Java is Always Pass-by-Value
+Primitive types (e.g., int, double): The actual value is copied.
+Objects : The reference to the object (i.e., memory address) is copied. This means:
+You can modify the object's state (fields) inside the method, and changes will persist outside.
+You cannot reassign the object reference itself to point to a new object and have that change reflected outside the method.
 class MyClass {
-    private int myVar;
+    int value = 0;
 
-    /**
-     * Returns the value of myVar.
-     * 
-     * @return the value of myVar
-     */
-    public int getMyVar() {
-        return myVar;
-    }
-
-    /**
-     * Sets the value of myVar.
-     * 
-     * @param myVar the new value of myVar
-     */
-    public void setMyVar(int myVar) {
-        this.myVar = myVar;
-    }
-
-    public void myMethod(MyClass obj) {
-        obj.setMyVar(10); // This will change the value of myVar in the original object.
-    }
-
-    public static void main(String[] args) {
-        MyClass obj = new MyClass();
-        obj.setMyVar(5);
-        obj.myMethod(obj);
-        System.out.println(obj.getMyVar()); // This will print 10.
+    void updateValue(MyClass obj) {
+        obj.value = 10; // Modifies the object's state
     }
 }
+
+public class Main {
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        System.out.println(obj.value); // Output: 0
+
+        obj.updateValue(obj);
+        System.out.println(obj.value); // Output: 10
+    }
+}
+
+Explanation :
+updateValue(obj) passes the reference to obj (i.e., the memory address of the object).
+Inside updateValue(), obj.value = 10 modifies the original object's state because both obj in main() and obj in updateValue() point to the same object in memory.
+
 //======================================================================================================================================================================================================
 
 
